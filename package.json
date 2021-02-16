@@ -2,7 +2,7 @@
   "name": "list-keeper",
   "productName": "List Keeper",
   "description": "An awesome list application.",
-  "repository": "https://github.com/seccomiro/aula-build",
+  "repository": "https://github.com/IFPR-2020-1-TADS-Desenv-Aplic-Desktop/aula-deploy",
   "author": {
     "name": "Diego Stiehl",
     "email": "diego.stiehl@gmail.com"
@@ -13,7 +13,8 @@
     "start": "electron .",
     "watch": "nodemon --exec electron .",
     "build": "electron-builder build",
-    "build:linux": "electron-builder -l"
+    "build:linux": "electron-builder -l",
+    "publish:linux": "electron-builder -l -p 'onTagOrDraft'"
   },
   "keywords": [],
   "license": "ISC",
@@ -29,8 +30,12 @@
     "appId": "com.stiehl.listkeeper",
     "compression": "store",
     "linux": {
-      "target": "deb",
+      "target": [
+        "deb",
+        "zip"
+      ],
       "category": "Utility"
     }
-  }
+  },
+  "provider": "github"
 }
