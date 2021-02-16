@@ -103,9 +103,9 @@ exports.appMenu = window => {
     {
       role: 'editMenu',
     },
-    {
-      role: 'toggleDevTools',
-    },
+    // {
+    //   role: 'toggleDevTools',
+    // },
   ];
 
   if (process.platform === 'darwin') {

@@ -1,12 +1,15 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { appMenu } = require('./menu');
 const Store = require('electron-store');
+const updater = require('./updater');
 
 Store.initRenderer();
 
 let mainWindow;
 
 function createWindow() {
+  setTimeout(updater, 1500);
+
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
